@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.mainpage.MainPageActivity">
+
+    <View
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/image_L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.4"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/image_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.6"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="23dp"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="23dp"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.5"
+                android:orientation="vertical"
+                />
+
+            <View
+                android:id="@+id/main_background"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/small_logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/image_L"
+                app:layout_constraintRight_toRightOf="@id/image_R"
+                android:layout_marginTop="30dp"
+                />
+
+            <Button
+                android:id="@+id/bad"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/list_item_view"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintRight_toRightOf="@id/center"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/good_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:fontFamily="@font/nanum_square_round_b"
+                android:text="상점"
+                android:textColor="@color/orange"
+                android:textSize="22sp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintLeft_toLeftOf="@id/bad"
+                app:layout_constraintRight_toRightOf="@id/bad"
+                app:layout_constraintBottom_toBottomOf="@id/main_background"
+                />
+
+            <TextView
+                android:id="@+id/good_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:fontFamily="@font/nanum_square_round_b"
+                android:textColor="@color/gray"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="@id/bad"
+                app:layout_constraintTop_toBottomOf="@id/good_point"
+                app:layout_constraintRight_toRightOf="@id/bad"
+                />
+
+            <Button
+                android:id="@+id/good"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/list_item_view"
+                app:layout_constraintLeft_toLeftOf="@id/center"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/bad_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:fontFamily="@font/nanum_square_round_b"
+                android:text="벌점"
+                android:textColor="@color/orange"
+                android:textSize="22sp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintLeft_toLeftOf="@id/good"
+                app:layout_constraintRight_toRightOf="@id/good"
+                app:layout_constraintBottom_toBottomOf="@id/main_background"
+                />
+
+            <TextView
+                android:id="@+id/bad_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:fontFamily="@font/nanum_square_round_b"
+                android:textColor="@color/gray"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="@id/good"
+                app:layout_constraintTop_toBottomOf="@id/bad_point"
+                app:layout_constraintRight_toRightOf="@id/good"
+                />
+
+            <TextView
+                android:id="@+id/user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:elevation="5dp"
+                android:shadowColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                app:layout_constraintBottom_toTopOf="@id/good"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="33sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/hanna_pro"
+                android:elevation="5dp"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintBottom_toTopOf="@id/user"
+                android:includeFontPadding="false"
+                />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintTop_toBottomOf="@id/bad"
+                />
+            
+            <View
+                android:id="@+id/breakfast_v"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:background="@drawable/list_item_view"
+                app:layout_constraintTop_toBottomOf="@id/date"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                />
+            <View
+                android:id="@+id/lunch_v"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:background="@drawable/list_item_view"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/breakfast_v"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                />
+
+            <View
+                android:id="@+id/dinner_v"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:background="@drawable/list_item_view"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/lunch_v"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                />
+
+            <Button
+                android:id="@+id/late"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/list_item_view"
+                android:layout_marginTop="35dp"
+                android:text="연장신청"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                android:textSize="20sp"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/dinner_v"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                />
+
+            <Button
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/list_item_view"
+                android:layout_marginTop="20dp"
+                android:text="귀가신청"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                android:textSize="20sp"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/late"
+                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                />
+
+            <TextView
+                android:id="@+id/breakfast_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아침"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                android:textSize="20sp"
+                android:textColor="@color/orange"
+                app:layout_constraintTop_toTopOf="@id/breakfast_v"
+                app:layout_constraintLeft_toLeftOf="@id/breakfast_v"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="35dp"
+                />
+
+            <TextView
+                android:id="@+id/lunch_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="점심"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                android:textSize="20sp"
+                android:textColor="@color/orange"
+                app:layout_constraintTop_toTopOf="@id/lunch_v"
+                app:layout_constraintLeft_toLeftOf="@id/lunch_v"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="35dp"
+                />
+
+            <TextView
+                android:id="@+id/dinner_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="저녁"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                android:textSize="20sp"
+                android:textColor="@color/orange"
+                app:layout_constraintTop_toTopOf="@id/dinner_v"
+                app:layout_constraintLeft_toLeftOf="@id/dinner_v"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="35dp"
+                />
+
+            <TextView
+                android:id="@+id/breakfast_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/breakfast_t"
+                app:layout_constraintLeft_toLeftOf="@id/breakfast_v"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="35dp"
+                />
+
+            <TextView
+                android:id="@+id/lunch_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/lunch_t"
+                app:layout_constraintLeft_toLeftOf="@id/lunch_v"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="35dp"
+                />
+
+            <TextView
+                android:id="@+id/dinner_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/dinner_t"
+                app:layout_constraintLeft_toLeftOf="@id/dinner_v"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="35dp"
+                />
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGOUT"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/nanum_square_round_e_b"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                android:clickable="true"
+                app:layout_constraintTop_toBottomOf="@id/home"
+                app:layout_constraintRight_toRightOf="@id/guide2"
+                android:layout_marginRight="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
