@@ -30,6 +30,8 @@ public class LateActivity extends AppCompatActivity implements LateContract.View
     int clsNum;
     int stNum;
 
+    static boolean isMy;
+
     CheckBox[] ga = new CheckBox[10];
     CheckBox[] na = new CheckBox[11];
     CheckBox[] da = new CheckBox[10];
@@ -245,40 +247,44 @@ public class LateActivity extends AppCompatActivity implements LateContract.View
         for(int i = 0; i < classes.length; i++) {
             int I = i;
             classes[i].setOnClickListener(v -> {
-                switch (clsNum) {
-                    case 1:
-                        setSeatCancel(ga);
-                        break;
-                    case 2:
-                        setSeatCancel(na);
-                        break;
-                    case 3:
-                        setSeatCancel(da);
-                        break;
-                    case 4:
-                        setSeatCancel(la);
-                        break;
-                    case 5:
-                        setSeatCancel(f2);
-                        break;
-                    case 6:
-                        setSeatCancel(f3);
-                        break;
-                    case 7:
-                        setSeatCancel(f3_2);
-                        break;
-                    case 8:
-                        setSeatCancel(f4);
-                        break;
-                    case 9:
-                        setSeatCancel(f4_2);
-                        break;
-                    case 10:
-                        setSeatCancel(f5);
-                        break;
-                    case 11:
-                        setSeatCancel(sofa);
-                        break;
+                presenter.getMyInfo(getUserName());
+                Log.d("isMy", Boolean.toString(isMy));
+                if(!isMy) {
+                    switch (clsNum) {
+                        case 1:
+                            setSeatCancel(ga);
+                            break;
+                        case 2:
+                            setSeatCancel(na);
+                            break;
+                        case 3:
+                            setSeatCancel(da);
+                            break;
+                        case 4:
+                            setSeatCancel(la);
+                            break;
+                        case 5:
+                            setSeatCancel(f2);
+                            break;
+                        case 6:
+                            setSeatCancel(f3);
+                            break;
+                        case 7:
+                            setSeatCancel(f3_2);
+                            break;
+                        case 8:
+                            setSeatCancel(f4);
+                            break;
+                        case 9:
+                            setSeatCancel(f4_2);
+                            break;
+                        case 10:
+                            setSeatCancel(f5);
+                            break;
+                        case 11:
+                            setSeatCancel(sofa);
+                            break;
+                    }
                 }
                 class_layout[I].setVisibility(View.VISIBLE);
                 for(int j = 0; j < 11; j++) {
@@ -287,7 +293,7 @@ public class LateActivity extends AppCompatActivity implements LateContract.View
                     }
                 }
                 clsNum = I+1;
-                presenter.getLateInfo(Integer.toString(clsNum+1));
+                presenter.getLateInfo(Integer.toString(clsNum));
                 presenter.getMyInfo(getUserName());
             });
         }
@@ -368,6 +374,8 @@ public class LateActivity extends AppCompatActivity implements LateContract.View
             setSeatFalse(f5);
             setSeatFalse(sofa);
         }
+
+        isMy = isMyInfo;
     }
 
     public void setSeatTrue(CheckBox[] classes) {
