@@ -14,7 +14,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.time.LocalTime;
 import java.util.List;
 
 import simple.dms.myapplication.Methods.MaskToast;
@@ -315,16 +314,12 @@ public class LateActivity extends AppCompatActivity implements LateContract.View
         });
 
         late.setOnClickListener(v -> {
-            if(isDate()) {
-                if (stNum != 0) {
-                    presenter.postLate(new RequestLate(getUserName(), clsNum, stNum));
+            if (stNum != 0) {
+                presenter.postLate(new RequestLate(getUserName(), clsNum, stNum));
 
-                    maskToast.setMaskToast("신청이 완료되었습니다.", this);
-                } else {
-                    maskToast.setMaskToast("자리를 선택해주세요.", this);
-                }
-            }else {
-                maskToast.setMaskToast("신청할 시간이 아닙니다.", this);
+                maskToast.setMaskToast("신청이 완료되었습니다.", this);
+            } else {
+                maskToast.setMaskToast("자리를 선택해주세요.", this);
             }
         });
 
@@ -500,14 +495,6 @@ public class LateActivity extends AppCompatActivity implements LateContract.View
                 classes[i].setChecked(false);
             }
         }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public boolean isDate() {
-        LocalTime now = LocalTime.now();
-        LocalTime refTime = LocalTime.of(17, 30);
-
-        return now.isAfter(refTime);
     }
 
     @Override

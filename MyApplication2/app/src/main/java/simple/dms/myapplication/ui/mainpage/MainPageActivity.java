@@ -114,6 +114,7 @@ public class MainPageActivity extends AppCompatActivity implements MainPageContr
         StringBuilder lunch_menu = new StringBuilder();
         StringBuilder dinner_menu = new StringBuilder();
         StringBuilder to = new StringBuilder();
+        int i = 0;
         if(meals.getBreakfast() != null) {
             for (String menu : meals.getBreakfast()) {
                 breakfast_menu.append(menu).append(", ");
@@ -121,6 +122,8 @@ public class MainPageActivity extends AppCompatActivity implements MainPageContr
         }else {
             breakfast_menu.append("급식이 없습니다.");
         }
+        breakfast_menu.delete(breakfast_menu.length()-2, breakfast_menu.length()-1);
+
         if(meals.getLunch() != null) {
             for (String menu : meals.getLunch()) {
                 lunch_menu.append(menu).append(", ");
@@ -128,6 +131,7 @@ public class MainPageActivity extends AppCompatActivity implements MainPageContr
         }else {
             lunch_menu.append("급식이 없습니다.");
         }
+        lunch_menu.delete(lunch_menu.length()-2, lunch_menu.length()-1);
 
         if(meals.getDinner() != null) {
             for (String menu : meals.getDinner()) {
@@ -136,6 +140,8 @@ public class MainPageActivity extends AppCompatActivity implements MainPageContr
         }else {
             dinner_menu.append("급식이 없습니다.");
         }
+        dinner_menu.delete(dinner_menu.length() - 2, dinner_menu.length()-1);
+
         String today = LocalDate.now().toString();
 
         to.append(Integer.parseInt(today.substring(0,4)))
