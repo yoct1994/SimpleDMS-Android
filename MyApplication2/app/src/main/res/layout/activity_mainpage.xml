@@ -204,6 +204,7 @@
                 android:fontFamily="@font/nanum_square_round_e_b"
                 app:layout_constraintLeft_toLeftOf="@id/guide1"
                 app:layout_constraintTop_toBottomOf="@id/bad"
+                android:layout_marginLeft="15dp"
                 />
             
             <View
@@ -313,38 +314,38 @@
 
             <TextView
                 android:id="@+id/breakfast_menu"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
-                android:textSize="18sp"
+                android:textSize="13sp"
                 app:layout_constraintTop_toBottomOf="@id/breakfast_t"
                 app:layout_constraintLeft_toLeftOf="@id/breakfast_v"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="35dp"
+                app:layout_constraintRight_toRightOf="@id/breakfast_v"
                 />
 
             <TextView
                 android:id="@+id/lunch_menu"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
-                android:textSize="18sp"
+                android:textSize="13sp"
                 app:layout_constraintTop_toBottomOf="@id/lunch_t"
                 app:layout_constraintLeft_toLeftOf="@id/lunch_v"
+                app:layout_constraintRight_toRightOf="@id/lunch_v"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="35dp"
                 />
 
             <TextView
                 android:id="@+id/dinner_menu"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
-                android:textSize="18sp"
+                android:textSize="13sp"
                 app:layout_constraintTop_toBottomOf="@id/dinner_t"
                 app:layout_constraintLeft_toLeftOf="@id/dinner_v"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="35dp"
+                app:layout_constraintRight_toRightOf="@id/dinner_v"
                 />
 
             <TextView
