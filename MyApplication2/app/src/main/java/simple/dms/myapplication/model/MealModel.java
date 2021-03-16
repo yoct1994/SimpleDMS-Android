@@ -20,7 +20,7 @@ public class MealModel {
     public MealModel() {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://211.35.225.252:4001/api/")
+                .baseUrl("http://220.90.237.33:4001/api/")
                 .build();
         mealService = retrofit.create(MealService.class);
     }
@@ -31,9 +31,7 @@ public class MealModel {
         call.enqueue(new Callback<Meal>() {
             @Override
             public void onResponse(Call<Meal> call, Response<Meal> response) {
-                if(response.isSuccessful()) {
-                    loadMealListener.loadMeal(response.body());
-                }
+                loadMealListener.loadMeal(response.body());
             }
 
             @Override

@@ -24,7 +24,7 @@ public class LateModel {
     public LateModel() {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://211.35.225.252:4001/api/")
+                .baseUrl("http://220.90.237.33:4001/api/")
                 .build();
         lateService = retrofit.create(LateService.class);
     }

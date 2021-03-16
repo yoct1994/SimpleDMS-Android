@@ -20,7 +20,7 @@ public class LoginModel {
 
     public LoginModel() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://211.35.225.252:4001/api/")
+                .baseUrl("http://220.90.237.33:4001/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         tokenService = retrofit.create(TokenService.class);
